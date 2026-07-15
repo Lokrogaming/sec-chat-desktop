@@ -1,0 +1,37 @@
+{
+  "name": "sec-chat-desktop",
+  "version": "1.0.0",
+  "description": "Desktop-App für Sec Chat",
+  "main": "src/main.js",
+  "author": "Sec Chat",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "pack": "electron-builder --win dir"
+  },
+  "build": {
+    "appId": "app.secchat.desktop",
+    "productName": "Sec Chat",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Sec Chat"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.12"
+  }
+}

@@ -1,4 +1,5 @@
 const { app, BrowserWindow, shell, session } = require('electron');
+const path = require('path');
 
 const SEC_CHAT_URL = 'https://sec-chat.lovable.app';
 
@@ -10,6 +11,7 @@ function createWindow() {
     minHeight: 620,
     title: 'Sec Chat',
     autoHideMenuBar: true,
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     webPreferences: {
       contextIsolation: true,
       sandbox: true,
